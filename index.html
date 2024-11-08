@@ -191,14 +191,19 @@
     background: inherit;
   }
 
-  #contact {
+#contact {
     background: var(--light);
-    padding: 1rem;
-    min-height: 00vh;
+    padding: 2rem 0; /* Define um padding menor */
+    min-height: 100vh; /* Corrige a altura para ocupar a tela adequadamente */
     display: flex;
     align-items: center;
-    /* Remova a margem negativa */
-    margin-bottom: 0;
+    margin-bottom: 0; /* Remove margens adicionais */
+}
+
+.section {
+    padding: 4rem 2rem; /* Reduz o padding geral das seções */
+}
+
   }
 
   #contact .container {

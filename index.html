@@ -194,8 +194,8 @@
 #contact {
     background: var(--light);
     padding: 2rem 0; /* Define um padding menor */
-    min-height: 100vh; /* Corrige a altura para ocupar a tela adequadamente */
     display: flex;
+    flex-direction: column; /* Garante que os itens fiquem na mesma coluna */
     align-items: center;
     margin-bottom: 0; /* Remove margens adicionais */
 }
@@ -204,21 +204,20 @@
     padding: 4rem 2rem; /* Reduz o padding geral das seções */
 }
 
-  }
-
-  #contact .container {
+#contact .container {
     text-align: center;
-  }
+}
 
-  #contact h2 {
+#contact h2 {
     margin-bottom: 0.5rem;
     font-family: 'Playfair Display', serif;
-  }
+}
 
-  #contact p {
+#contact p {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
-  }
+}
+
 
 </style>
 <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>

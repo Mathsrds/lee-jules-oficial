@@ -1,221 +1,176 @@
-<html>
-<head>
-  <base href="../../">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lee Jules | Músico</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+<html><head><base href="../../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee Jules | Músico</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
 
-    :root {
-      --primary: #2C3E50;
-      --accent: #E74C3C;
-      --light: #ECF0F1;
+  :root {
+    --primary: #2C3E50;
+    --accent: #E74C3C;
+    --light: #ECF0F1;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.6;
+    color: var(--primary);
+  }
+
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(44, 62, 80, 0.9);
+    z-index: 100;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: var(--accent);
+  }
+
+  .section {
+    padding: 5rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #biography {
+    background: var(--light);
+  }
+
+  #music {
+    background: var(--primary);
+    color: var(--light);
+  }
+
+  .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .music-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+
+  .music-card:hover {
+    transform: translateY(-5px);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    body {
-      font-family: 'Raleway', sans-serif;
-      line-height: 1.6;
-      color: var(--primary);
-    }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
 
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1511735111819-9a3f7709049c') center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--light);
-    }
+  .social-links a {
+    color: var(--accent);
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+  }
 
-    .hero .container {
-      /* Remover perspectiva e transformações 3D */
-    }
+  .social-links a:hover {
+    transform: scale(1.2);
+  }
 
-    .profile-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 2rem auto;
-      display: block;
-      border: 3px solid var(--light);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      /* Remover efeitos 3D */
-      transition: transform 0.3s ease;
-    }
+  #contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    background: var(--light);
+  }
 
-    .profile-image:hover {
-      /* Remover efeito de hover 3D */
-      transform: unset;
-    }
+  #contact .container {
+    max-width: 600px;
+  }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      animation: fadeIn 2s ease-in;
-      /* Remover efeito de 3D */
-      transition: transform 0.3s ease;
-    }
+  #contact h2 {
+    margin-bottom: 2rem;
+    color: var(--primary);
+  }
 
-    .hero h1:hover {
-      /* Remover efeito de hover 3D */
-      transform: unset;
-    }
+  #contact p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
 
-    .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 1rem;
-      background: rgba(44, 62, 80, 0.9);
-      z-index: 100;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-
-    nav a {
-      color: var(--light);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      margin: 0 1rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .section {
-      padding: 5rem 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    #biography {
-      background: var(--light);
-    }
-
-    #music {
-      background: var(--primary);
-      color: var(--light);
-    }
-
-    .music-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .music-card {
-      background: rgba(255,255,255,0.1);
-      padding: 1.5rem;
-      border-radius: 8px;
-      /* Remover efeitos de 3D */
-      transition: transform 0.5s ease;
-    }
-
-    .music-card:hover {
-      /* Remover efeito de hover 3D */
-      transform: unset;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .social-links a {
-      color: var(--accent);
-      font-size: 1.5rem;
-      /* Remover transformações 3D */
-      transition: transform 0.3s;
-    }
-
-    .social-links a:hover {
-      /* Remover efeito de hover 3D */
-      transform: unset;
-    }
-
-    .section {
-      position: relative;
-    }
-
-    #biography, #music, #contact {
-      position: relative;
-      overflow: hidden;
-    }
-
-    #biography::before, #music::before, #contact::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
-      background: inherit;
-    }
-
-    #contact {
-      background: var(--light);
-      padding: 2rem 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 0;
-    }
-
-    #contact .container {
-      text-align: center;
-    }
-
-    #contact h2 {
-      margin-bottom: 0.5rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    #contact p {
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-  </style>
-  <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    border: 3px solid var(--light);
+    object-fit: cover;
+    animation: fadeIn 2s ease-in;
+  }
+</style>
+<script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <nav>
@@ -229,74 +184,77 @@
 
   <section id="home" class="hero">
     <div class="container">
-        <img src="https://raw.githubusercontent.com/Mathsrds/lee-jules-oficial/refs/heads/main/391283722_344996704598796_4183517599141668714_n.jpg" alt="Foto de perfil de Lee Jules, artista de trap e rap" class="profile-image" width="200" height="200">
-        <h1>Lee Jules</h1>
-        <p>Músico | Compositor | Artista de Trap, Rap e R&B</p>
-        <div class="social-links">
-            <a href="https://open.spotify.com/intl-pt/artist/6rIpUsmJ0QQzGf2h6cHabz?si=51fyvPh_Re6uogtwhpNAiQ"><i class="fab fa-spotify"></i></a>
-            <a href="https://www.youtube.com/@leejuleslj"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/leejuleslj/"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/LeeJules5?t=biqR0PvehFC8Etugx6uMuA&s=09"><i class="fab fa-twitter"></i></a>
-        </div>
+      <img src="https://raw.githubusercontent.com/Mathsrds/lee-jules-oficial/refs/heads/main/391283722_344996704598796_4183517599141668714_n.jpg" alt="Lee Jules portrait photo, stylish pose against dark background" class="profile-image">
+      <h1>Lee Jules</h1>
+      <p>Músico | Compositor | Artista de Trap, Rap e R&B</p>
+      <div class="social-links">
+        <a href="https://open.spotify.com/intl-pt/artist/6rIpUsmJ0QQzGf2h6cHabz?si=kEn5JSnJTsWpBrwq9WVz1g&nd=1&dlsi=edca83cde0584272"><i class="fab fa-spotify"></i></a>
+        <a href="https://youtu.be/Bnw97-HkOD4?si=6ESDBjJqdPO96EoR"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/leejuleslj/"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
   </section>
 
   <section id="biography" class="section">
     <div class="container">
-        <h2>Biografia</h2>
-        <p>Marc Jules, mais conhecido como Lee Jules, nasceu em Porto Príncipe, Haiti, e aos 12 anos foi envolvido pela cultura musical de sua terra natal. Aos 16 anos, fez sua primeira música autoral e teve sua primeira experiência como cantor nas ruas de Porto Príncipe. Em busca de novas oportunidades, ele migrou para o Brasil, onde iniciou sua trajetória trabalhando como garçom em um hotel. Apesar dos desafios de recomeçar em um país desconhecido, a paixão pela música permaneceu viva, e Marc usou suas experiências para alimentar sua arte.</p>
+      <h2>Biografia</h2>
+      <p>Marc Jules, mais conhecido como Lee Jules, nasceu em Porto Príncipe, Haiti, e aos 12 anos foi envolvido pela cultura musical de sua terra natal. Aos 16 anos, fez sua primeira música autoral e teve sua primeira experiência como cantor nas ruas de Porto Príncipe. Em busca de novas oportunidades, ele migrou para o Brasil, onde iniciou sua trajetória trabalhando como garçom em um hotel. Apesar dos desafios de recomeçar em um país desconhecido, a paixão pela música permaneceu viva, e Marc usou suas experiências para alimentar sua arte.</p>
     </div>
   </section>
 
   <section id="music" class="section">
     <div class="container">
-        <h2>Música</h2>
-        <div class="music-grid">
-            <div class="music-card">
-                <h3>Singles</h3>
-                <p>Últimos lançamentos</p>
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6rIpUsmJ0QQzGf2h6cHabz" width="100%" height="380" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
-            <div class="music-card">
-                <h3>YouTube</h3>
-                <p>Canal Oficial</p>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/_ZaGJ4bEziw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+      <h2>Música</h2>
+      <div class="music-grid">
+        <div class="music-card">
+          <h3>Ouça no Spotify</h3>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6rIpUsmJ0QQzGf2h6cHabz" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
+        <div class="music-card">
+          <h3>Assista no YouTube</h3>
+          <iframe width="100%" height="380" src="https://www.youtube.com/embed/Bnw97-HkOD4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="music-card">
+          <h3>Instagram</h3>
+          <iframe src="https://www.instagram.com/leejuleslj/embed" width="100%" height="380" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="contact" class="section">
     <div class="container">
-        <h2>Entre em Contato</h2>
-        <p>Gostou do meu trabalho? Entre em contato comigo ou acompanhe as redes sociais.</p>
+      <h2>Contato</h2>
+      <p>Para shows, colaborações ou outras informações:</p>
+      <p>Tel: +55 51 98442-4688</p>
+      <p>Email: leejules062@gmail.com</p>
     </div>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Smooth scroll para links do menu
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll para links do menu
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
             });
         });
-
-        // Adiciona classe active ao menu quando scrollar
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(44, 62, 80, 1)';
-            } else {
-                nav.style.background = 'rgba(44, 62, 80, 0.9)';
-            }
-        });
     });
-  </script>
+
+    // Adiciona classe active ao menu quando scrollar
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.background = 'rgba(44, 62, 80, 1)';
+        } else {
+            nav.style.background = 'rgba(44, 62, 80, 0.9)';
+        }
+    });
+});
+</script>
 </body>
 </html>
